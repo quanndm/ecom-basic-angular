@@ -1,0 +1,28 @@
+<div class="container mx-auto">
+  <div class="flex justify-center items-center w-full">
+    <img src="assets/images/banner1.jpg" class="lg:w-[85%] md:w-full  mb-5" alt="" />
+  </div>
+  <div class="flex justify-center items-center w-full">
+    <div *ngIf="loading">
+      <img src="assets/images/loading.gif" alt="">
+    </div>
+    <div *ngIf="!loading" class="flex justify-center items-center w-full  flex-col">
+      <div class="w-10/12 mx-auto flex justify-between">
+        <h3 class="font-bold text-xl">Featured products</h3>
+        <p class="text-lg cursor-pointer hover:underline" (click)="goToProductPage()">Xem them</p>
+      </div>
+      <div  class="grid gap-6 lg:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 mx-auto py-4">
+          <app-card *ngFor="let item of products;" [item]="item"></app-card>
+      </div>
+      <div class="w-10/12 mx-auto flex justify-between">
+        <h3 class="font-bold text-xl">Top-rate products</h3>
+        <p class="text-lg cursor-pointer hover:underline" (click)="goToProductPage()">Xem them</p>
+      </div>
+      <div  class="grid gap-6 lg:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 mx-auto py-4">
+          <app-card *ngFor="let item of productsTopRate;" [item]="item"></app-card>
+      </div>
+    </div>
+
+  </div>
+
+</div>
